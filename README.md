@@ -1,4 +1,4 @@
-# restfulrecord
+# Yii2-RestfulRecord
 
 Restful Record is an ActiveRecord-like interface used to talk an an API instead of a database
 
