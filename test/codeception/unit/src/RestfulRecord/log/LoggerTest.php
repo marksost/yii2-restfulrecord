@@ -2,7 +2,7 @@
 
 namespace src\RestfulRecord\log;
 
-use \Codeception\Util\Stub;
+use Codeception\Util\Stub;
 use RestfulRecord\log\Logger;
 use yii\log\Logger as YiiLogger;
 use Yii;

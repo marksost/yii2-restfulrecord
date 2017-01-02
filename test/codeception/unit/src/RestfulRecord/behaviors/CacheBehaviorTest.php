@@ -2,7 +2,7 @@
 
 namespace src\RestfulRecord\behaviors;
 
-use \Codeception\Util\Stub;
+use Codeception\Util\Stub;
 use GuzzleHttp\Psr7\Response;
 use RestfulRecord\RestfulRecord;
 use RestfulRecord\RestfulRecordCache;

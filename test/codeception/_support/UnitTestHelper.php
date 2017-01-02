@@ -2,46 +2,26 @@
 
 namespace Codeception\Module;
 
-use Yii;
-
 class UnitTestHelper extends \Codeception\Module {
-	/**
-	 * setUserRole abstracts setting user roles to make this file more DRY
-	 * Also resets Yii's user component identity class after setting the new user role
-	 * 
-	 * @param string $role 			Role of the user to be set
-	 * @param UserModel $userModel 		The user model identity class to apply the role to
-	 */
-	public function setUserRole( $role = null, $userModel = null ) {
-		// Reflect private method
-		$setRole = $this->reflectMethod( "app\models\auth\UserModel", "setRole" );
-
-		$setRole->invoke( $userModel, $role );
-
-		// Reset user's identity class
-		Yii::$app->user->setIdentity( $userModel );
-	}
 
 	/**
 	 * reflectClass abstracts class reflection to make tests more DRY
 	 *
-	 * @param string $className 			Class name to be reflected
+	 * @param string $className     Class name to be reflected
 	 *
-	 * @return ReflectionClass 				Reflected class
+	 * @return ReflectionClass      Reflected class
 	 */
 	public function reflectClass( $className ) {
-		$class = new \ReflectionClass( $className );
-
-		return $class;
+		return new \ReflectionClass( $className );
 	}
 
 	/**
 	 * reflectMethod abstracts protected/private method reflection to make tests more DRY
 	 * 
-	 * @param string $className 			Class name to be reflected
-	 * @param string $methodName 			Method name of be reflected
+	 * @param string $className      Class name to be reflected
+	 * @param string $methodName     Method name of be reflected
 	 * 
-	 * @return ReflectionMethod 				Reflected method
+	 * @return ReflectionMethod      Reflected method
 	 */
 	public function reflectMethod( $className, $methodName ) {
 		$method = new \ReflectionMethod( $className, $methodName );
@@ -54,10 +34,10 @@ class UnitTestHelper extends \Codeception\Module {
 	/**
 	 * reflectProperty abstracts protected/private property reflection to make tests more DRY
 	 *
-	 * @param string $className 			Class name to be reflected
-	 * @param string $property 				Property name of be reflected
+	 * @param string $className       Class name to be reflected
+	 * @param string $property        Property name of be reflected
 	 *
-	 * @return ReflectionProperty 				Reflected property
+	 * @return ReflectionProperty     Reflected property
 	 */
 	public function reflectProperty( $className, $property ) {
 		// Reflect class
@@ -74,11 +54,11 @@ class UnitTestHelper extends \Codeception\Module {
 	/**
 	 * invokeMethod abstracts protected/private method invocation to make tests more DRY
 	 *
-	 * @param string $class 				Class to invoke the method on
-	 * @param string $methodName 			The name of the method to be invoked
-	 * @param array  $params 				An array of arguments to be passed along to the invoked method
+	 * @param string $class          Class to invoke the method on
+	 * @param string $methodName     The name of the method to be invoked
+	 * @param array  $params         An array of arguments to be passed along to the invoked method
 	 * 
-	 * @return InvokedMethod 				Invoked method	 
+	 * @return InvokedMethod         Invoked method	 
 	 */
 	public function invokeMethod( $class, $methodName, array $params = array() ) {
 		// Reflect method
@@ -90,11 +70,11 @@ class UnitTestHelper extends \Codeception\Module {
 	/**
 	 * setProperty abstracts protected/private property setting to make tests more DRY
 	 *
-	 * @param string $class 				Class to set property on
-	 * @param string $property 				Property name of be reflected
-	 * @param string $value 				The value to which $property will be set
+	 * @param string $class           Class to set property on
+	 * @param string $property        Property name of be reflected
+	 * @param string $value           The value to which $property will be set
 	 *
-	 * @return ReflectionProperty 				Reflected property with new value
+	 * @return ReflectionProperty     Reflected property with new value
 	 */
 	public function setProperty( $class, $property, $value ) {
 		// Reflect class

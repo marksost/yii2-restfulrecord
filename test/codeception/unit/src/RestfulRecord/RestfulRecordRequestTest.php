@@ -2,7 +2,7 @@
 
 namespace src\RestfulRecord;
 
-use \Codeception\Util\Stub;
+use Codeception\Util\Stub;
 use Concat\Http\Middleware\Logger;
 use GuzzleHttp\Client;
 use GuzzleHttp\Exception\RequestException;

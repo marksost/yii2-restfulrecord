@@ -2,22 +2,29 @@
 
 // Unit configuration overrides
 $config = array(
-	'controllerMap' => array(
-		'fixture' => array(
-			'class' => 'yii\faker\FixtureController',
-			'fixtureDataPath' => '@tests/codeception/fixtures',
-			'templatePath' => '@tests/codeception/templates',
-			'namespace' => 'tests\codeception\fixtures',
+	"id" => "RestfulRecord",
+	"name" => "RestfulRecord",
+
+	"basePath" => dirname( __DIR__ ),
+
+	"vendorPath" => dirname( __DIR__ )."/../../vendor",
+
+	"components" => array(
+		"cache" => array(
+			"class" => "yii\\caching\\ArrayCache",
+		),
+
+		"restfulrecord" => array(
+			"class" => "RestfulRecord\\RestfulRecordComponent",
 		),
 	),
 
-	'components' => array(
-
-	)
+	"language" => "en_us",
 );
 
-// Return test with overrides from this file
-return yii\helpers\ArrayHelper::merge(
-	require( __DIR__.'/../../app/config/main.php' ),
-	$config
-);
+// Enable all error reporting
+error_reporting( E_ALL );
+ini_set( "display_errors", "1" );
+
+// Return config
+return $config;

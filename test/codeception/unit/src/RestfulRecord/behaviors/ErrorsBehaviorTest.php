@@ -2,7 +2,7 @@
 
 namespace src\RestfulRecord\behaviors;
 
-use \Codeception\Util\Stub;
+use Codeception\Util\Stub;
 use RestfulRecord\behaviors\ErrorsBehavior;
 use RestfulRecord\RestfulRecord;
 use yii\helpers\ArrayHelper;

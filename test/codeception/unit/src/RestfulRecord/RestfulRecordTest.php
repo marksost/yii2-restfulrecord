@@ -2,7 +2,7 @@
 
 namespace src\RestfulRecord;
 
-use \Codeception\Util\Stub;
+use Codeception\Util\Stub;
 use RestfulRecord\RestfulRecord;
 use RestfulRecord\RestfulRecordComponent;
 use RestfulRecord\RestfulRecordUtils;

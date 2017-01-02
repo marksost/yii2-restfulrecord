@@ -2,7 +2,7 @@
 
 namespace src\RestfulRecord\behaviors;
 
-use \Codeception\Util\Stub;
+use Codeception\Util\Stub;
 use GuzzleHttp\Message\Response;
 use RestfulRecord\behaviors\CrudBehavior;
 use RestfulRecord\RestfulRecord;
