@@ -1,0 +1,4 @@
+# Auto generated codeception build files
+unit/UnitTester.php
+_support/UnitTester.php
+_support/_generated/*

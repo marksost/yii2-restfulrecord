@@ -1,0 +1,14 @@
+#!/usr/bin/env php
+<?php
+
+// Add console bootstrap
+require_once __DIR__.'/_bootstrap.php';
+
+// Use config with overrides from this file
+$config = require( dirname( __DIR__ ).'/config/config.php');
+
+$application = new yii\console\Application($config);
+
+$exitCode = $application->run();
+
+exit($exitCode);
